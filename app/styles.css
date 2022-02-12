@@ -1,0 +1,186 @@
+.body {
+  background-color: #181818;
+  overflow-x: hidden;
+  color: rgb(202, 201, 201);
+}
+.navbar {
+  border-top: 1px solid rgb(122, 121, 121);
+  background-color: #212121;
+}
+.login-page {
+  background-image: url("https://assets.nflxext.com/ffe/siteui/vlv3/20876cab-b49d-4957-bbaf-906ceb1c05f1/65a3cdb3-3c98-404d-97db-bc1c7b196e8c/VN-en-20220117-popsignuptwoweeks-perspective_alpha_website_large.jpg");
+  width: 100vw;
+  height: 100vh;
+}
+.bg-login {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.bg-form-login {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+.bg-input-login {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.link-login {
+  width: 150px;
+}
+.audio {
+  position: fixed;
+  bottom: 70px;
+  right: 20px;
+  border-radius: 50%;
+  padding: 5px;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.sidebar {
+  position: sticky;
+  top: 50px;
+  border: 1px solid rgb(95, 93, 93);
+  padding: 10px;
+}
+.list-title {
+  color: rgb(202, 201, 201);
+  text-decoration: none;
+  display: block;
+}
+.list-title:hover {
+  color: #fff;
+  background-color: #3a3838;
+}
+
+.footer {
+  margin-bottom: 60px;
+  padding: 10px;
+  color: rgb(122, 121, 121);
+  border-top: 1px solid rgb(122, 121, 121);
+  text-align: center;
+}
+
+.link-detail {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  color: #fff;
+}
+
+.bg-carousel {
+  position: absolute;
+  background-size: contain;
+  opacity: 0.1;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  height: 500px;
+}
+
+.img-carousel {
+  object-fit: scale-down;
+  height: 500px;
+}
+
+.page-detail {
+  overflow-x: hidden;
+  padding: 0;
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.detail-img {
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80vh;
+  object-fit: cover;
+}
+.detail-row {
+  background-color: rgba(0, 0, 0, 0.8);
+  height: 80vh;
+}
+.tom-tat {
+  max-width: 600px;
+  white-space: pre-wrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+}
+
+.form-search {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.input-search {
+  background-color: rgba(0, 0, 0, 0.1);
+  outline: none;
+  border-radius: 5px;
+  padding: 5px;
+  color: #fff;
+  border: 1px solid rgb(95, 93, 93);
+  margin-top: 5px;
+  flex: 2;
+}
+.btn-search {
+  background-color: #181818;
+  border: 1px solid rgb(95, 93, 93);
+  border-radius: 5px;
+  flex: 1;
+  margin-top: 5px;
+}
+.choose-page {
+  border-top: 1px solid rgb(122, 121, 121);
+  margin-top: 20px;
+  padding-top: 10px;
+  margin-bottom: 5px;
+  color: rgb(202, 201, 201);
+}
+.naviga {
+  /* background-color: #fff; */
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.naviga-item {
+  border: 1px solid rgb(95, 93, 93);
+  padding: 5px 10px;
+  display: block;
+  text-decoration: none;
+  color: rgb(202, 201, 201);
+}
+.active-navi {
+  color: rgb(202, 201, 201);
+  background-color: rgb(95, 93, 93);
+}
+.naviga-item:hover {
+  color: rgb(202, 201, 201);
+  background-color: rgb(95, 93, 93);
+  border: 1px solid rgb(241, 132, 132);
+}
+
+.group-name {
+  margin-right: 10px;
+}
+.group-name label {
+  font-size: 18px;
+  margin-right: 5px;
+}
+.btn-comment {
+  background-color: #181818;
+  border: 1px solid rgb(95, 93, 93);
+  border-radius: 5px;
+  color: rgb(202, 201, 201);
+  padding: 5px 15px;
+  width: 100%;
+}
+.input-comment {
+  background-color: rgba(0, 0, 0, 0.1);
+  outline: none;
+  border-radius: 5px;
+  color: #fff;
+  border: 1px solid rgb(95, 93, 93);
+  padding: 5px;
+}
