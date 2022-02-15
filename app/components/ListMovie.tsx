@@ -5,19 +5,19 @@ import { Link } from "remix";
 import { MovieItem, PropMovieItem } from "~/api/movie";
 
 export default function ListMovie({
-  title,
-  movies,
-  homeSectionId,
-  newTitle,
+  title = "",
+  movies = [],
+  homeSectionId = 0,
+  newTitle = "",
 }: PropMovieItem) {
   return (
     <div id={`movie-${homeSectionId ? homeSectionId : "0"}`}>
       {!newTitle && (
         <h1 className="fs-3 fw-light fst-italic mb-3 d-flex align-items-center">
           <span>
-            {title.includes("Loklok")
+            {title?.includes("Loklok")
               ? "Phim tuyển chọn của REMIX"
-              : title.includes("kinh")
+              : title?.includes("kinh")
               ? "Phim kinh dị"
               : title}
           </span>

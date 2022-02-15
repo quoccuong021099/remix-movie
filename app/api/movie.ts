@@ -49,7 +49,7 @@ export async function getFilms(title?: string | null, page?: string | null) {
   if (title) {
     newArr = await listData?.map((i: DataI) =>
       i?.recommendContentVOList?.filter((a: DataA) =>
-        a?.title.toLowerCase().includes(title.toLowerCase())
+        a?.title.toLowerCase()?.includes(title.toLowerCase())
       )
     );
   } else {
