@@ -1,4 +1,4 @@
-import { getComments } from './comments';
+import { getComments } from "./comments";
 
 export type DataI = {
   recommendContentVOList: [];
@@ -34,11 +34,11 @@ export async function getFilms(title?: string | null, page?: string | null) {
   const response = await fetch(
     `https://ga-mobile-api.loklok.tv/cms/app/homePage/getHome?page=${newPage}`,
     {
-      method: 'get',
+      method: "get",
       headers: {
-        lang: 'vi',
-        versioncode: '11',
-        clienttype: 'ios_jike_default',
+        lang: "vi",
+        versioncode: "11",
+        clienttype: "ios_jike_default",
       },
     }
   );
@@ -67,21 +67,21 @@ export async function getFilmDetail(
   const response = await fetch(
     `https://ga-mobile-api.loklok.tv/cms/app/movieDrama/get?id=${name}&category=${newCate}`,
     {
-      method: 'get',
+      method: "get",
       headers: {
-        lang: 'vi',
-        versioncode: '11',
-        clienttype: 'ios_jike_default',
+        lang: "vi",
+        versioncode: "11",
+        clienttype: "ios_jike_default",
       },
     }
   );
   const films = await response.json();
 
-  const comments = await getComments(name, newCate);
+  // const comments = await getComments(name, newCate);
 
   if (!films.data) {
     throw new Response("Can't find film", { status: 404 });
   } else {
-    return { films: films.data, comments };
+    return { films: films.data };
   }
 }

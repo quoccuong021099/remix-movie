@@ -10,9 +10,9 @@ import {
   useLoaderData,
 } from "remix";
 import invariant from "tiny-invariant";
-import { addComment } from "~/api/comments";
+// import { addComment } from "~/api/comments";
 import { getFilmDetail, MovieItemDetail } from "~/api/movie";
-import CommentsList from "~/components/CommentList";
+// import CommentsList from "~/components/CommentList";
 
 export const meta: MetaFunction = ({ data }) => {
   return {
@@ -51,7 +51,7 @@ export const action: ActionFunction = async ({ request, params }) => {
     return { errors, values };
   }
 
-  await addComment(comment);
+  // await addComment(comment);
 
   return redirect(`/movie/detail/${params.name}?cate=${cateId}`);
 };
@@ -70,7 +70,6 @@ export const loader: LoaderFunction = async ({ params, request }) => {
 export default function index() {
   const filmData = useLoaderData();
   const film = filmData?.films;
-  const comments = filmData?.comments;
 
   return (
     <div className="page-detail">
@@ -94,7 +93,7 @@ export default function index() {
           </p>
           <p>
             <span className="text-info">Thể loại:</span>{" "}
-            {film?.tagNameList.map((item: string) => (
+            {film?.tagNameList?.map((item: string) => (
               <span key={item}>{item}, </span>
             ))}{" "}
             {film?.drameTypeVo.drameName}.
@@ -106,10 +105,6 @@ export default function index() {
           <p>
             <span className="text-info">Thời gian:</span> 30 phút/ tập.
           </p>
-          {/* <p>
-            <span className="text-info">Diễn viên:</span> Lê Quốc Cường, Nguyễn
-            Quang Anh Bảo.
-          </p> */}
           <p className="tom-tat">
             <span className="text-info">Tóm tắt: </span>
             {film?.introduction}
@@ -164,11 +159,11 @@ export default function index() {
           </Row>
         </div>
       </Container>
-      <CommentsList
+      {/* <CommentsList
         filmId={film.id}
         comments={comments || []}
         cateId={film.category}
-      />
+      /> */}
     </div>
   );
 }

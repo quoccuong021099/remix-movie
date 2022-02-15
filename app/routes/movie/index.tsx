@@ -1,8 +1,7 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
-// import { Scrollchor } from 'react-scrollchor';
 import { Link, LoaderFunction, useLoaderData } from "remix";
-import { getFilms } from "~/api/movie";
+import { getFilms, ItemListTitle } from "~/api/movie";
 import FormSearch from "~/components/FormSearch";
 import ListMovie from "~/components/ListMovie";
 import Slide from "~/components/Slide";
@@ -45,38 +44,35 @@ export default function Index() {
                 homeSectionId={0}
               />
             ) : (
-              newArrFilm
-                ?.slice(1)
-                ?.map((item: any, index: number) => (
-                  <ListMovie
-                    movies={item?.recommendContentVOList}
-                    title={item?.homeSectionName}
-                    newTitle={title}
-                    key={index}
-                    homeSectionId={item?.homeSectionId}
-                  />
-                ))
+              newArrFilm?.map((item: any, index: number) => (
+                <ListMovie
+                  movies={item?.recommendContentVOList}
+                  title={item?.homeSectionName}
+                  newTitle={title}
+                  key={index}
+                  homeSectionId={item?.homeSectionId}
+                />
+              ))
             )}
           </Col>
 
           <Col className="col" lg={3} md={4} sm={4}>
             <div className="sidebar">
               <FormSearch />
-              {/* {!title &&
+              {!title &&
                 newArrFilm?.map((item: ItemListTitle, index: number) => (
-                  <Scrollchor
+                  <Link
                     to={`#movie-${item?.homeSectionId}`}
                     className="list-title mt-2 p-1"
                     key={index}
-                    animate={{ duration: 200, offset: -100 }}
                   >
-                    {item?.homeSectionName?.includes('Loklok')
-                      ? 'Phim tuyển chọn của REMIX'
-                      : item?.homeSectionName?.includes('kinh')
-                      ? 'Phim kinh dị'
+                    {item?.homeSectionName?.includes("Loklok")
+                      ? "Phim tuyển chọn của REMIX"
+                      : item?.homeSectionName?.includes("kinh")
+                      ? "Phim kinh dị"
                       : item?.homeSectionName}
-                  </Scrollchor>
-                ))} */}
+                  </Link>
+                ))}
               <p className="choose-page">Chọn trang</p>
               <div className="naviga">
                 {[0, 1, 2, 3, 4, 5, 6, 7, 8]?.map((i) => (
